@@ -30,6 +30,8 @@ import robotbuilder.actions.TogglePaletteViewAction;
 import robotbuilder.actions.UndoAction;
 import robotbuilder.actions.VerifyAction;
 
+import robotbuilder.actions.CleanUpAction;	////////
+
 /**
  *
  * @author brad
@@ -50,6 +52,9 @@ public class ActionsClass {
     private final AbstractAction verifyAction = new VerifyAction();
     private final AbstractAction togglePalettViewAction = new TogglePaletteViewAction();
 
+    private final AbstractAction cleanUpAction = new CleanUpAction();	////////
+    
+    
     private LinkedList<ExporterAction> exporters;
 
     public ActionsClass() {
@@ -126,6 +131,7 @@ public class ActionsClass {
                 .filter(ExporterAction::isOnToolbar)
                 .forEach(bar::add);
         bar.add(gettingStartedAction);
+        bar.add(cleanUpAction);
         return bar;
     }
 
